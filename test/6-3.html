@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복되는 요소에 이벤트 한꺼번에 연결하기</title>
+  <style>
+    #box {
+      width: 300px;
+      height: 300px;
+      margin: 50px auto;
+      background: pink;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li><a href="#">item1</a></li>
+    <li><a href="#">item2</a></li>
+    <li><a href="#">item3</a></li>
+    <li><a href="#">item4</a></li>
+  </ul>
+
+  <a href="#" class="btnPlus">plus</a>
+  <a href="#" class="btnMinus">minus</a>
+  <a href="#" class="btnLeft">왼쪽으로 회전</a>
+  <a href="#" class="btnRight">오른쪽으로 회전</a>
+
+  <div id="box"></div>
+  <script>
+    const list = document.querySelectorAll('.list li')
+    // console.log(list)
+
+    for(let el of list) {
+      el.addEventListener('click', e => {
+        e.preventDefault()
+        console.log(e.currentTarget.innerText)
+      })
+    }
+
+    const btnPlus = document.querySelector('.btnPlus')
+    const btnMinus = document.querySelector('.btnMinus')
+    let num = 0
+
+    btnPlus.addEventListener("click", e => {
+      e.preventDefault()
+      num++
+      console.log(num)
+    })
+
+    btnMinus.addEventListener("click", e => {
+      e.preventDefault()
+      num--
+      console.log(num)
+    })
+    const btnLeft = document.querySelector('.btnLeft')
+    const btnRight = document.querySelector('.btnRight')
+    const box = document.querySelector('#box')
+    const deg = 30
+    let number = 0
+
+    btnLeft.addEventListener("click", e => {
+      e.preventDefault()
+      number--
+      console.log(number)
+      box.style.transform = `rotate(${number * deg}deg)`
+    })
+    btnRight.addEventListener("click", e => {
+      e.preventDefault()
+      number++
+      box.style.transform = `rotate(${number * deg}deg)`
+    })
+  </script>
+</body>
+</html>

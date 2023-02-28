@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트로 사용자 브라우저 판단하기</title>
+</head>
+<body>
+  <script>
+    const ver = navigator.userAgent
+    console.log(ver)
+
+    const isIE = /trident/i.test(ver)
+    console.log(isIE)
+
+    if(isIE) {
+      alert('익스플로러 브라우저로 접속하셨네요. 이 웹 페이지는 익스플로러를 지원하지 않습니다. 다른 브라우저로 접속해 주세요.')
+    }
+  </script>
+</body>
+</html>
