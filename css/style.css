@@ -1,43 +1,82 @@
-div {
-  width: 650px;
-  margin: 100px auto;
-  border: 1px solid #ccc;
-  padding: 10px;
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-div img {
-  width: 200px;
-  margin: 6px;
+ul,
+ol,
+li {
+  list-style: none;
 }
 
-div img:nth-of-type(2) {
-  filter: blur(3px)
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-div img:nth-of-type(3) {
-  filter: brightness(0.5)
+body {
+  background: #efefef;
 }
 
-div img:nth-of-type(4) {
-  filter: contrast(150%)
+main {
+  width: 100%;
+  height: 100vh;
 }
 
-div img:nth-of-type(5) {
-  filter: grayscale(100%)
+section {
+  padding: 14vh 0;
+  height: 100%;
 }
 
-div img:nth-of-type(6) {
-  filter: hue-rotate(270deg)
+section h1 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
 }
 
-div img:nth-of-type(7) {
-  filter: invert(80%)
+section .inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-div img:nth-of-type(8) {
-  filter: saturate(0.5)
+section article {
+  border: 1px solid black;
+  width: 24%;
+}
+section figure {
+  width: 100%;
+  height: 200px;
+  background: #000;
+  position: relative;
+  overflow: hidden;
 }
 
-div img:nth-of-type(9) {
-  filter: sepia(80%)
+section figure video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+section article h2 {
+  text-align: center;
+  font-size: 17px;
+}
+
+section article a {
+  margin: 20px auto;
+  display: block;
+  width: 100px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #222;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
 }
