@@ -27,7 +27,7 @@ main {
 }
 
 section {
-  padding: 14vh 0;
+  padding: 10vh 0;
   height: 100%;
 }
 
@@ -40,24 +40,30 @@ section h1 {
 section .inner {
   max-width: 1280px;
   margin: 0 auto;
-  height: 100%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  justify-content: center;
+}
+
+section .inner:nth-of-type(1) article {
+  width: 25%;
+}
+
+section .inner:nth-of-type(2) article {
+  width: 33.333%
 }
 
 section article {
-  width: 300px;
+  width: 400px;
+  height: 100%;
   margin-bottom: 40px;
   margin-right: 20px;
-  border: 1px solid #333;
+  border: 1px solid #130d0d;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   overflow: hidden;
 }
 
-section article:nth-child(4) {
+section article:last-child {
   margin-right: 0;
 }
 
